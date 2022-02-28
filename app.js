@@ -26,8 +26,10 @@ $(document).ready(function () {
     $(`#h2Input`).append(a);
     $(`#ulList`).append(`<li class="test">${a}</li>`);
     $(`#ulList`).append(`<li id='li12'>${a}</li>`);
+    $(`#li12`).append(".");
   });
   //change list item color when clicked
+  /* this works but is the whole list not one element */
   $(`#ulList`).on(`click`, function () {
     let min = 0;
     let max = 255;
@@ -37,9 +39,10 @@ $(document).ready(function () {
     let b = `rgb(${RGB1},${RGB2},${RGB3})`;
     $("#li12").css(`color`, b);
   });
+
   //click on a list item and it is removed
 
-  $(`li`).on(`dblclick`, function () {
+  $(`#ulList`).on("dblclick", function () {
     $("#li12").remove();
     console.log("click ");
   });
